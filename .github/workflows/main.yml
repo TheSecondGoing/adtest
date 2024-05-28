@@ -1,7 +1,13 @@
 # This is a basic workflow to help you get started with Actions
 
 name: CI
-...
+on:
+  pull_request:
+    types: [opened]
+jobs:
+  build:
+    name: Post welcome comment
+    runs-on: ubuntu-latest
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
